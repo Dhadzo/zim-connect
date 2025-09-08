@@ -91,11 +91,11 @@ const SignIn = () => {
         </div>
       </header>
 
-      <div className="flex min-h-screen">
+      <div className="flex h-screen">
         {/* Left Side - Form */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-md w-full">
-            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] p-8 relative">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-500 p-8 relative">
               <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
               <div className="text-center mb-8">
                 <h2 className="text-4xl font-bold text-gray-900 mb-2">

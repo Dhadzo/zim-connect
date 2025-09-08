@@ -78,12 +78,12 @@ export default function Landing() {
               </div>
             </div>
             <div className="relative w-full max-w-md lg:max-w-none mx-auto">
-              <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-500">
                 <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
                 <img
                   src="/couple1.jpg"
                   alt="Happy couple"
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-48 sm:h-64 lg:h-72 object-cover transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
                   <div className="text-white">
@@ -109,7 +109,7 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 transition-all duration-500 border border-gray-200">
               <div className="bg-gradient-to-br from-red-500 to-pink-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
                 <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
@@ -118,7 +118,7 @@ export default function Landing() {
                 Connect with fellow Zimbabweans who share your culture, values, and experiences.
               </p>
             </div>
-            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 transition-all duration-500 border border-gray-200">
               <div className="bg-gradient-to-br from-blue-500 to-cyan-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
                 <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
@@ -127,7 +127,7 @@ export default function Landing() {
                 Your privacy and safety are our top priorities with verified profiles and secure messaging.
               </p>
             </div>
-            <div className="text-center px-4 sm:px-0 sm:col-span-2 lg:col-span-1 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+            <div className="text-center px-4 sm:px-0 sm:col-span-2 lg:col-span-1 bg-white rounded-2xl p-6 transition-all duration-500 border border-gray-200">
               <div className="bg-gradient-to-br from-purple-500 to-indigo-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
                 <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
@@ -152,7 +152,7 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+            <div className="bg-white p-4 sm:p-6 rounded-2xl transition-all duration-500 border border-gray-200">
               <div className="flex items-center mb-3 sm:mb-4">
                 <img
                   src="/couple2.jpg"

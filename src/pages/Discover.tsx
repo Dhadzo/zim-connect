@@ -11,7 +11,6 @@ import { useUIStore } from '../stores/useUIStore';
 
 import ProfileModal from '../components/ProfileModal';
 import DiscoverSidebar from '../components/DiscoverSidebar';
-import MobileSearchModal from '../components/MobileSearchModal';
 
 const Discover = () => {
   const { user } = useAuth();
@@ -21,7 +20,7 @@ const Discover = () => {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
   const [isLiking, setIsLiking] = useState(false);
   const [isPassing, setIsPassing] = useState(false);
-  const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   // Temporary location filter state
   const [tempLocationFilter, setTempLocationFilter] = useState<{
@@ -69,6 +68,8 @@ const Discover = () => {
     else if (profiles.length === 0) {
       setCurrentProfileIndex(0);
     }
+    // Reset photo index when profile changes
+    setCurrentPhotoIndex(0);
   }, [profiles.length, currentProfileIndex]);
 
   // Handle temporary location filter changes
@@ -144,20 +145,10 @@ const Discover = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100/50">
-      {/* Mobile Search Button - Only visible on mobile */}
-      <div className="lg:hidden fixed top-20 right-4 z-40">
-        <button
-          onClick={() => setShowMobileSearch(true)}
-          className="bg-white text-gray-700 p-3 rounded-full shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200"
-          title="Search Profiles"
-        >
-          <Search className="h-5 w-5 text-gray-600" />
-        </button>
-      </div>
+    <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 min-h-full overflow-x-hidden">
 
       {/* LinkedIn-style layout with centered content and right sidebar */}
-      <div className="flex gap-8">
+      <div className="flex gap-4 lg:gap-8 overflow-x-hidden">
         {/* Main Profile Card Area - Wider for better fit */}
         <div className="flex-1 max-w-xl mx-auto">
           {/* Loading State */}
@@ -249,20 +240,19 @@ const Discover = () => {
               <>
                 {/* Profile Card */}
                 <div className="flex-1 flex items-center justify-center py-1">
-                  <div className="w-full max-w-md mx-auto">
+                  <div className="w-full max-w-sm mx-auto">
                     {/* Profile Card - Enhanced Design with Glow Effect */}
                     <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] relative">
                       {/* Sparkle Effect */}
                       <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
                       {/* Profile Image - Smaller height */}
                       <div
-                        className="relative h-56 bg-gray-100 cursor-pointer group overflow-hidden"
-                        onClick={() => handleProfileClick(currentProfile)}
+                        className="relative h-56 bg-gray-100 group overflow-hidden"
                       >
                         {currentProfile.photos &&
                         currentProfile.photos.length > 0 ? (
                           <img
-                            src={currentProfile.photos[0]}
+                            src={currentProfile.photos[currentPhotoIndex] || currentProfile.photos[0]}
                             alt={currentProfile.displayName || 'Profile'}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                           />
@@ -272,39 +262,53 @@ const Discover = () => {
                           </div>
                         )}
 
-                        {/* Enhanced Skip Button with Tooltip */}
-                        <div className="absolute top-4 right-16 z-20">
+                        {/* Photo Navigation Icon - Top Right */}
+                        {currentProfile.photos && currentProfile.photos.length > 1 && (
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              handleSkip();
+                              setCurrentPhotoIndex((prev) => 
+                                prev < currentProfile.photos.length - 1 ? prev + 1 : 0
+                              );
                             }}
-                            disabled={currentProfileIndex >= profiles.length - 1}
-                            className="group bg-white/90 backdrop-blur-sm text-gray-700 p-3 rounded-full border border-white/50 hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-110"
-                            title="Skip to next profile"
+                            className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm text-gray-700 p-2 rounded-full border border-white/50 hover:bg-white transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-110 z-20"
+                            title="Next photo"
                           >
-                            <SkipForward className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                            <span className="text-sm font-bold">→</span>
                           </button>
-                        </div>
-                        
-                        {/* Photo Indicator Dots */}
-                        <div className="absolute top-4 left-4 flex space-x-1 z-20">
-                          <div className="w-2 h-2 bg-white rounded-full opacity-80"></div>
-                          <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                          <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                          <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                        </div>
-                        
-                        {/* Boost Button */}
-                        <div className="absolute top-4 right-4 z-20">
-                          <button
-                            className="group bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-3 rounded-full shadow-lg hover:shadow-yellow-500/50 transform hover:scale-110 transition-all duration-200 animate-pulse"
-                            title="Boost your profile!"
-                          >
-                            <span className="text-sm font-bold">⚡</span>
-                          </button>
-                        </div>
+                        )}
 
+
+                      </div>
+
+                      {/* Photo Navigation Below Image */}
+                      <div className="px-4 py-2 bg-gray-50 border-b border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <button
+                            onClick={() => handleProfileClick(currentProfile)}
+                            className="text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                          >
+                            View Full Profile
+                          </button>
+                          {currentProfile.photos && currentProfile.photos.length > 1 && (
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-500">
+                                {currentPhotoIndex + 1} of {currentProfile.photos.length}
+                              </span>
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setCurrentPhotoIndex((prev) => 
+                                    prev < currentProfile.photos.length - 1 ? prev + 1 : 0
+                                  );
+                                }}
+                                className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                              >
+                                <span className="text-xs">→</span>
+                              </button>
+                            </div>
+                          )}
+                        </div>
                       </div>
 
                       {/* Profile Details */}
@@ -337,14 +341,6 @@ const Discover = () => {
                           </div>
                         )}
 
-                        {/* Bio Preview */}
-                        {currentProfile.bio && (
-                          <div className="bg-gray-50 rounded-lg p-3 mb-3">
-                            <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
-                              {currentProfile.bio}
-                            </p>
-                          </div>
-                        )}
                         
                         {/* Quick Info Tags */}
                         <div className="flex items-center gap-2 mb-3">
@@ -359,13 +355,10 @@ const Discover = () => {
                           </div>
                         </div>
 
-                        {/* Compact Interests */}
+                        {/* Compact Interests - No heading */}
                         {currentProfile.interests &&
                           currentProfile.interests.length > 0 && (
                             <div className="mb-3">
-                              <h4 className="text-sm font-semibold text-gray-600 mb-2 flex items-center">
-                                Interests
-                              </h4>
                               <div className="flex flex-wrap gap-1.5">
                                 {currentProfile.interests
                                   .slice(0, 3)
@@ -455,11 +448,6 @@ const Discover = () => {
         />
       )}
 
-      {/* Mobile Search Modal */}
-      <MobileSearchModal
-        isOpen={showMobileSearch}
-        onClose={() => setShowMobileSearch(false)}
-      />
     </div>
   );
 };

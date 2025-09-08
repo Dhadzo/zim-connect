@@ -200,39 +200,6 @@ const Profile = () => {
       {/* Main Content */}
       <main>
         <div className="max-w-2xl mx-auto">
-          {/* Floating Profile Stats */}
-          <div className="mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="group bg-gradient-to-br from-red-500 to-pink-500 text-white p-4 rounded-2xl transform transition-all duration-500 hover:scale-110 hover:rotate-1 hover:shadow-2xl hover:shadow-red-500/50 cursor-pointer">
-                <div className="text-center">
-                  <div className="text-2xl font-bold group-hover:animate-bounce">12</div>
-                  <div className="text-xs opacity-90">Matches</div>
-                </div>
-                <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div className="group bg-gradient-to-br from-purple-500 to-blue-500 text-white p-4 rounded-2xl transform transition-all duration-500 hover:scale-110 hover:-rotate-1 hover:shadow-2xl hover:shadow-purple-500/50 cursor-pointer">
-                <div className="text-center">
-                  <div className="text-2xl font-bold group-hover:animate-bounce">34</div>
-                  <div className="text-xs opacity-90">Likes</div>
-                </div>
-                <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div className="group bg-gradient-to-br from-green-500 to-emerald-500 text-white p-4 rounded-2xl transform transition-all duration-500 hover:scale-110 hover:rotate-1 hover:shadow-2xl hover:shadow-green-500/50 cursor-pointer">
-                <div className="text-center">
-                  <div className="text-2xl font-bold group-hover:animate-bounce">89%</div>
-                  <div className="text-xs opacity-90">Complete</div>
-                </div>
-                <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div className="group bg-gradient-to-br from-orange-500 to-yellow-500 text-white p-4 rounded-2xl transform transition-all duration-500 hover:scale-110 hover:-rotate-1 hover:shadow-2xl hover:shadow-orange-500/50 cursor-pointer">
-                <div className="text-center">
-                  <div className="text-2xl font-bold group-hover:animate-bounce">⭐</div>
-                  <div className="text-xs opacity-90">Featured</div>
-                </div>
-                <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-            </div>
-          </div>
 
           <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/50 overflow-hidden hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] relative">
             {/* Floating Hearts Animation */}

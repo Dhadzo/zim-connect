@@ -122,10 +122,10 @@ const SignUp = () => {
         </div>
       </header>
 
-      <div className="flex flex-col lg:flex-row min-h-screen pt-12 sm:pt-16">
+      <div className="flex flex-col lg:flex-row h-screen pt-12 sm:pt-16">
         {/* Left Side - Image */}
         <div className="hidden lg:block relative lg:w-0 lg:flex-1 p-8">
-          <div className="h-full bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 relative">
+          <div className="h-full bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-500 relative">
             <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
             <img
               className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
@@ -146,7 +146,7 @@ const SignUp = () => {
         {/* Right Side - Form */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2">
           <div className="max-w-md w-full">
-            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] p-4 sm:p-5 relative">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-500 p-4 sm:p-5 relative">
               <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
               <div className="text-center mb-3 sm:mb-4">
                 <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2">

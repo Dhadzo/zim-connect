@@ -168,11 +168,33 @@ h5 {
   overflow-y: auto !important;
 }
 
-/* Specifically target message containers */
+/* Specifically target message containers - COMPLETELY hide scrollbars */
 .messages-container {
   scroll-behavior: auto !important;
   transition: none !important;
   animation: none !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.messages-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbars on matches page specifically */
+.matches-page {
+  overflow: hidden !important;
+}
+
+.matches-page * {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.matches-page *::-webkit-scrollbar {
+  display: none !important;
 }
 
 /* Disable any CSS transitions that might affect scrolling */

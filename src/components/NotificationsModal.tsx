@@ -139,6 +139,19 @@ const NotificationsModal: React.FC<NotificationsModalProps> = ({ isOpen, onClose
     if (!buttonRef?.current) return {};
     
     const rect = buttonRef.current.getBoundingClientRect();
+    const isMobile = window.innerWidth < 640; // sm breakpoint
+    
+    if (isMobile) {
+      // Center the modal on mobile
+      return {
+        position: 'fixed' as const,
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 50
+      };
+    }
+    
     return {
       position: 'fixed' as const,
       top: rect.bottom + 8,
@@ -154,7 +167,7 @@ const NotificationsModal: React.FC<NotificationsModalProps> = ({ isOpen, onClose
       
       {/* Dropdown */}
       <div 
-        className="bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl w-72 sm:w-80 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto border border-gray-200/50 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden"
+        className="bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl w-80 sm:w-80 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto border border-gray-200/50 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden"
         style={getDropdownStyle()}
       >
         {/* Sparkle Effects */}

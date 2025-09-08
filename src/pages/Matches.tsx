@@ -233,7 +233,7 @@ const Matches = () => {
   }));
 
   return (
-    <div className="h-screen bg-gradient-to-br from-gray-50 via-red-50/20 to-pink-50/20 overflow-hidden">
+    <div className="matches-page h-screen bg-gradient-to-br from-gray-50 via-red-50/20 to-pink-50/20 overflow-hidden">
       {/* Mobile: Show either list or chat, Desktop: Show both */}
       <main className="h-[calc(100vh-140px)] bg-white/95 backdrop-blur-lg overflow-hidden shadow-xl border-t border-gray-200/50">
         {/* Mobile Layout */}
@@ -369,7 +369,13 @@ const Matches = () => {
               {/* Mobile Messages Area */}
               <div
                 ref={messagesContainerRef}
-                className="messages-container flex-1 overflow-hidden p-4 space-y-4 bg-gray-50"
+                className="messages-container flex-1 p-4 space-y-4 bg-gray-50"
+                style={{ 
+                  height: 'calc(100vh - 280px)', 
+                  overflow: 'hidden',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none'
+                }}
               >
                 {messagesLoading ? (
                   <div className="flex justify-center items-center py-8">

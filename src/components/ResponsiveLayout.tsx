@@ -22,7 +22,7 @@ const ResponsiveLayout = () => {
       
       {/* LinkedIn-style Layout: Centered content with balanced sidebars */}
       <div className="h-full pt-14 sm:pt-16">
-        <div className="max-w-6xl mx-auto h-full flex gap-8">
+        <div className="max-w-6xl mx-auto h-full flex gap-8 overflow-x-hidden">
           {/* Left Sidebar - Always visible on desktop */}
           <div className="hidden lg:block lg:w-56 flex-shrink-0">
             <div className="h-full overflow-y-auto">
@@ -31,8 +31,8 @@ const ResponsiveLayout = () => {
           </div>
 
           {/* Main Content Area - Centered and responsive */}
-          <div className="flex-1 h-full overflow-y-auto" ref={containerRef}>
-            <div className="pb-16 lg:pb-0 py-4">
+          <div className="flex-1 h-full overflow-y-auto overflow-x-hidden" ref={containerRef}>
+            <div className="pb-16 lg:pb-0 py-4 px-4 sm:px-6 lg:px-8">
               <Outlet />
             </div>
           </div>
