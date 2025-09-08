@@ -70,7 +70,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100/50">
       {/* Header */}
       <header className="absolute top-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -94,15 +94,17 @@ const SignIn = () => {
       <div className="flex min-h-screen">
         {/* Left Side - Form */}
         <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md w-full space-y-8">
-            <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-2">
-                Welcome back
-              </h2>
-              <p className="text-gray-600">Sign in to continue your journey</p>
-            </div>
+          <div className="max-w-md w-full">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] p-8 relative">
+              <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
+              <div className="text-center mb-8">
+                <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                  Welcome back
+                </h2>
+                <p className="text-gray-600">Sign in to continue your journey</p>
+              </div>
 
-            <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
               {error && (
                 <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
                   {error}
@@ -190,13 +192,13 @@ const SignIn = () => {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="group relative w-full flex justify-center py-4 px-4 border border-transparent text-lg font-medium rounded-xl text-white bg-gradient-to-r from-red-600 to-pink-500 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {loading ? 'Signing in...' : 'Sign in'}
-              </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="group relative w-full flex justify-center py-4 px-4 border border-transparent text-lg font-bold rounded-xl text-white bg-gradient-to-r from-red-500 via-pink-500 to-red-500 hover:from-red-600 hover:via-pink-600 hover:to-red-600 hover:shadow-red-500/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg animate-pulse"
+                >
+                  {loading ? 'Signing in...' : '❤️ Sign in'}
+                </button>
 
               <div className="mt-6">
                 <div className="relative">
@@ -204,37 +206,42 @@ const SignIn = () => {
                     <div className="w-full border-t border-gray-300" />
                   </div>
                   <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-gradient-to-br from-red-50 to-pink-50 text-gray-500">
+                    <span className="px-2 bg-white text-gray-500">
                       Or continue with
                     </span>
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  <div className="col-span-2">
-                    <p className="text-center text-sm text-gray-600">
-                      More sign-in options coming soon!
+                <div className="mt-6">
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
+                      ✨ More sign-in options coming soon!
                     </p>
                   </div>
                 </div>
               </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
 
         {/* Right Side - Image */}
-        <div className="hidden lg:block relative w-0 flex-1">
-          <img
-            className="absolute inset-0 h-full w-full object-cover"
-            src="/couple2.jpg"
-            alt="Happy couple"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-red-600/20 to-transparent"></div>
-          <div className="absolute bottom-10 left-10 text-white max-w-md">
-            <h3 className="text-2xl font-bold mb-2">Find Your Perfect Match</h3>
-            <p className="text-pink-100">
-              Join thousands of Zimbabweans who found love through ZimConnect.
-            </p>
+        <div className="hidden lg:block relative w-0 flex-1 p-8">
+          <div className="h-full bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 relative">
+            <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
+            <img
+              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              src="/couple2.jpg"
+              alt="Happy couple"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
+              <div className="text-white">
+                <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-2">Find Your Perfect Match</h3>
+                <p className="text-white/95">
+                  Join thousands of Zimbabweans who found love through ZimConnect.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

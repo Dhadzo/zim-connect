@@ -177,7 +177,6 @@ const Settings = () => {
           <div className="flex items-center justify-between mb-8">
             <div className="relative">
               <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Settings</h1>
-              <div className="absolute -top-2 -right-2 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
               <p className="text-gray-600 mt-2 bg-white/50 backdrop-blur-sm rounded-full px-4 py-1 inline-block">Manage your account preferences and privacy settings ⚙️</p>
             </div>
           </div>

@@ -248,25 +248,15 @@ const Discover = () => {
             currentProfile && (
               <>
                 {/* Profile Card */}
-                <div className="flex-1 flex items-center justify-center py-4">
+                <div className="flex-1 flex items-center justify-center py-1">
                   <div className="w-full max-w-md mx-auto">
-                    {/* Profile Counter - Professional Style */}
-                    <div className="text-center mb-4">
-                      <div className="inline-flex items-center bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200">
-                        <div className="w-2 h-2 bg-gradient-to-r from-red-500 to-pink-500 rounded-full mr-3 animate-pulse"></div>
-                        <span className="text-gray-700 font-semibold text-sm">
-                          {currentProfileIndex + 1} of {profiles.length}
-                        </span>
-                      </div>
-                    </div>
-                  
                     {/* Profile Card - Enhanced Design with Glow Effect */}
                     <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] relative">
                       {/* Sparkle Effect */}
                       <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
-                      {/* Profile Image - Adjusted height */}
+                      {/* Profile Image - Smaller height */}
                       <div
-                        className="relative h-72 bg-gray-100 cursor-pointer group overflow-hidden"
+                        className="relative h-56 bg-gray-100 cursor-pointer group overflow-hidden"
                         onClick={() => handleProfileClick(currentProfile)}
                       >
                         {currentProfile.photos &&
@@ -315,69 +305,65 @@ const Discover = () => {
                           </button>
                         </div>
 
-                        {/* Enhanced Profile Info Overlay with animations */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
-                          <div className="text-white transform transition-all duration-300 group-hover:translate-y-[-4px]">
-                            <div className="flex items-center justify-between mb-2">
-                              <h2 className="text-xl font-bold text-white drop-shadow-lg">
-                                {currentProfile.displayName ||
-                                  `${currentProfile.first_name} ${currentProfile.last_name}`}
-                              </h2>
-                              {/* Online Status Indicator */}
-                              <div className="flex items-center">
-                                <div className="w-3 h-3 bg-green-400 rounded-full mr-2 animate-pulse shadow-lg"></div>
-                                <span className="text-xs text-green-300 font-medium">Online</span>
-                              </div>
-                            </div>
-
-                            {/* Age and Location with enhanced styling */}
-                            {currentProfile.showLocation && (
-                              <div className="flex items-center text-white/95 mb-3">
-                                <div className="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                                  <MapPin className="h-4 w-4 mr-2 text-blue-300" />
-                                  <span className="text-sm font-medium">
-                                    {currentProfile.displayLocation ||
-                                      `${currentProfile.city}, ${currentProfile.state}`}
-                                  </span>
-                                  {/* Distance indicator */}
-                                  <span className="ml-2 text-xs text-blue-200">• 2.5 mi</span>
-                                </div>
-                              </div>
-                            )}
-
-                            {/* Bio Preview with enhanced styling */}
-                            {currentProfile.bio && (
-                              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-3">
-                                <p className="text-sm text-white/95 line-clamp-2 leading-relaxed">
-                                  {currentProfile.bio}
-                                </p>
-                              </div>
-                            )}
-                            
-                            {/* Quick Info Tags */}
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="flex items-center bg-purple-500/20 backdrop-blur-sm rounded-full px-2 py-1">
-                                <span className="text-xs text-purple-200 font-medium">Age 28</span>
-                              </div>
-                              <div className="flex items-center bg-pink-500/20 backdrop-blur-sm rounded-full px-2 py-1">
-                                <span className="text-xs text-pink-200 font-medium">🎓 College</span>
-                              </div>
-                              <div className="flex items-center bg-blue-500/20 backdrop-blur-sm rounded-full px-2 py-1">
-                                <span className="text-xs text-blue-200 font-medium">💼 Professional</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                       </div>
 
                       {/* Profile Details */}
-                      <div className="p-6">
+                      <div className="p-4">
+                        {/* Profile Name and Status */}
+                        <div className="flex items-center justify-between mb-3">
+                          <h2 className="text-xl font-bold text-gray-900">
+                            {currentProfile.displayName ||
+                              `${currentProfile.first_name} ${currentProfile.last_name}`}
+                          </h2>
+                          {/* Online Status Indicator */}
+                          <div className="flex items-center">
+                            <div className="w-3 h-3 bg-green-400 rounded-full mr-2 animate-pulse shadow-lg"></div>
+                            <span className="text-xs text-green-600 font-medium">Online</span>
+                          </div>
+                        </div>
+
+                        {/* Age and Location */}
+                        {currentProfile.showLocation && (
+                          <div className="flex items-center text-gray-600 mb-3">
+                            <div className="flex items-center bg-gray-100 rounded-full px-3 py-1">
+                              <MapPin className="h-4 w-4 mr-2 text-gray-500" />
+                              <span className="text-sm font-medium">
+                                {currentProfile.displayLocation ||
+                                  `${currentProfile.city}, ${currentProfile.state}`}
+                              </span>
+                              {/* Distance indicator */}
+                              <span className="ml-2 text-xs text-gray-500">• 2.5 mi</span>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Bio Preview */}
+                        {currentProfile.bio && (
+                          <div className="bg-gray-50 rounded-lg p-3 mb-3">
+                            <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                              {currentProfile.bio}
+                            </p>
+                          </div>
+                        )}
+                        
+                        {/* Quick Info Tags */}
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="flex items-center bg-purple-100 rounded-full px-2 py-1">
+                            <span className="text-xs text-purple-700 font-medium">Age 28</span>
+                          </div>
+                          <div className="flex items-center bg-pink-100 rounded-full px-2 py-1">
+                            <span className="text-xs text-pink-700 font-medium">🎓 College</span>
+                          </div>
+                          <div className="flex items-center bg-blue-100 rounded-full px-2 py-1">
+                            <span className="text-xs text-blue-700 font-medium">💼 Professional</span>
+                          </div>
+                        </div>
+
                         {/* Compact Interests */}
                         {currentProfile.interests &&
                           currentProfile.interests.length > 0 && (
-                            <div className="mb-4">
+                            <div className="mb-3">
                               <h4 className="text-sm font-semibold text-gray-600 mb-2 flex items-center">
-                                <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
                                 Interests
                               </h4>
                               <div className="flex flex-wrap gap-1.5">
@@ -399,35 +385,23 @@ const Discover = () => {
                               </div>
                             </div>
                           )}
-                          
-                        {/* Compact Compatibility Score */}
-                        <div className="mb-4 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="text-sm font-semibold text-green-700">Compatibility</span>
-                            <span className="text-xl font-bold text-green-600">94%</span>
-                          </div>
-                          <div className="w-full bg-green-200 rounded-full h-1.5">
-                            <div className="bg-gradient-to-r from-green-400 to-emerald-500 h-1.5 rounded-full w-[94%] shadow-sm"></div>
-                          </div>
-                          <p className="text-xs text-green-600 mt-1 font-medium">High match! You both love travel & music 🎵</p>
-                        </div>
 
                         {/* Enhanced Action Buttons with Slick Animations */}
-                        <div className="flex space-x-3 mb-4">
+                        <div className="flex space-x-2">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               handlePass();
                             }}
                             disabled={isPassing}
-                            className="group flex-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 py-4 px-4 rounded-xl font-semibold hover:from-gray-200 hover:to-gray-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                            className="group flex-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 py-3 px-3 rounded-xl font-semibold hover:from-gray-200 hover:to-gray-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                           >
                             {isPassing ? (
-                              <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                              <Loader2 className="h-4 w-4 animate-spin mr-1" />
                             ) : (
-                              <X className="h-5 w-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
+                              <X className="h-4 w-4 mr-1 group-hover:rotate-90 transition-transform duration-300" />
                             )}
-                            <span className="font-bold">Pass</span>
+                            <span className="font-bold text-sm">Pass</span>
                           </button>
                           <button
                             onClick={(e) => {
@@ -435,22 +409,25 @@ const Discover = () => {
                               handleLike();
                             }}
                             disabled={isLiking}
-                            className="group flex-1 bg-gradient-to-r from-red-500 via-pink-500 to-red-500 text-white py-4 px-4 rounded-xl font-semibold hover:from-red-600 hover:via-pink-600 hover:to-red-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-red-500/50 transform hover:scale-105 active:scale-95 animate-pulse"
+                            className="group flex-1 bg-gradient-to-r from-red-500 via-pink-500 to-red-500 text-white py-3 px-3 rounded-xl font-semibold hover:from-red-600 hover:via-pink-600 hover:to-red-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-red-500/50 transform hover:scale-105 active:scale-95 animate-pulse"
                           >
                             {isLiking ? (
-                              <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                              <Loader2 className="h-4 w-4 animate-spin mr-1" />
                             ) : (
-                              <Heart className="h-5 w-5 mr-2 group-hover:animate-bounce fill-current" />
+                              <Heart className="h-4 w-4 mr-1 group-hover:animate-bounce fill-current" />
                             )}
-                            <span className="font-bold">❤️ Like</span>
+                            <span className="font-bold text-sm">❤️ Like</span>
                           </button>
                         </div>
-                        
-                        {/* Super Like Button */}
-                        <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 text-white py-3 px-4 rounded-xl font-bold hover:from-blue-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 active:scale-95">
-                          <Star className="h-5 w-5 mr-2 fill-current" />
-                          ✨ Super Like
-                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Profile Counter - Professional Style - Moved to Bottom */}
+                    <div className="text-center mt-3">
+                      <div className="inline-flex items-center bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200">
+                        <span className="text-gray-700 font-semibold text-sm">
+                          {currentProfileIndex + 1} of {profiles.length}
+                        </span>
                       </div>
                     </div>
                   </div>

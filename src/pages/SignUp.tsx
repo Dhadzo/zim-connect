@@ -99,7 +99,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-50 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100/50 overflow-x-hidden">
       {/* Header */}
       <header className="absolute top-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -124,46 +124,51 @@ const SignUp = () => {
 
       <div className="flex flex-col lg:flex-row min-h-screen pt-12 sm:pt-16">
         {/* Left Side - Image */}
-        <div className="hidden lg:block relative lg:w-0 lg:flex-1">
-          <img
-            className="absolute inset-0 h-full w-full object-cover"
-            src="/couple3.jpg"
-            alt="Happy couple"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-red-600/20 to-transparent"></div>
-          <div className="absolute bottom-10 left-10 text-white max-w-md">
-            <h3 className="text-2xl font-bold mb-2">Start Your Love Story</h3>
-            <p className="text-pink-100">
-              Connect with Zimbabweans across America and find meaningful
-              relationships.
-            </p>
+        <div className="hidden lg:block relative lg:w-0 lg:flex-1 p-8">
+          <div className="h-full bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 relative">
+            <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
+            <img
+              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              src="/couple3.jpg"
+              alt="Happy couple"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
+              <div className="text-white">
+                <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-2">Start Your Love Story</h3>
+                <p className="text-white/95">
+                  Connect with Zimbabweans across America and find meaningful relationships.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Right Side - Form */}
-        <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
-          <div className="max-w-md w-full space-y-6 sm:space-y-8">
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2">
-                Join ZimConnect
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600">
-                Create your account and find your perfect match
-              </p>
-            </div>
+        <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-2">
+          <div className="max-w-md w-full">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] p-4 sm:p-5 relative">
+              <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
+              <div className="text-center mb-3 sm:mb-4">
+                <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2">
+                  Join ZimConnect
+                </h2>
+                <p className="text-sm text-gray-600">
+                  Create your account and find your perfect match
+                </p>
+              </div>
 
-            <form
-              className="mt-6 sm:mt-8 space-y-4 sm:space-y-6"
-              onSubmit={handleSubmit}
-            >
+              <form
+                className="space-y-2 sm:space-y-3"
+                onSubmit={handleSubmit}
+              >
               {error && (
                 <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
                   {error}
                 </div>
               )}
 
-              <div className="space-y-3 sm:space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label htmlFor="firstName" className="sr-only">
                       First Name
@@ -180,7 +185,7 @@ const SignUp = () => {
                         autoComplete="off"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="block w-full pl-10 pr-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                        className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                         placeholder="First Name"
                       />
                     </div>
@@ -198,7 +203,7 @@ const SignUp = () => {
                       autoComplete="off"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="block w-full px-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       placeholder="Last Name"
                     />
                   </div>
@@ -220,13 +225,13 @@ const SignUp = () => {
                       autoComplete="off"
                       value={formData.email}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       placeholder="Email address"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label htmlFor="age" className="sr-only">
                       Age
@@ -241,7 +246,7 @@ const SignUp = () => {
                       autoComplete="off"
                       value={formData.age}
                       onChange={handleChange}
-                      className="block w-full px-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       placeholder="Age"
                     />
                   </div>
@@ -256,7 +261,7 @@ const SignUp = () => {
                       required
                       value={formData.gender}
                       onChange={handleChange}
-                      className="block w-full px-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                     >
                       <option value="">Gender</option>
                       <option value="male">Male</option>
@@ -269,7 +274,7 @@ const SignUp = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <label htmlFor="state" className="sr-only">
                       State
@@ -280,7 +285,7 @@ const SignUp = () => {
                       required
                       value={formData.state}
                       onChange={handleChange}
-                      className="block w-full px-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                     >
                       <option value="">Select State</option>
                       {states.map((state) => (
@@ -305,7 +310,7 @@ const SignUp = () => {
                         required
                         value={formData.city}
                         onChange={handleChange}
-                        className="block w-full pl-10 pr-3 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                        className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       >
                         <option value="">
                           {formData.state ? 'Select City' : 'All Cities'}
@@ -336,7 +341,7 @@ const SignUp = () => {
                       autoComplete="new-password"
                       value={formData.password}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-10 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       placeholder="Password"
                     />
                     <button
@@ -369,7 +374,7 @@ const SignUp = () => {
                       autoComplete="new-password"
                       value={formData.confirmPassword}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-10 py-2.5 sm:py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 text-sm"
                       placeholder="Confirm Password"
                     />
                     <button
@@ -412,34 +417,34 @@ const SignUp = () => {
                 </label>
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="group relative w-full flex justify-center py-3 sm:py-4 px-4 border border-transparent text-base sm:text-lg font-medium rounded-xl text-white bg-gradient-to-r from-red-600 to-pink-500 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {loading ? 'Creating Account...' : 'Create Account'}
-              </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-gradient-to-r from-red-500 via-pink-500 to-red-500 hover:from-red-600 hover:via-pink-600 hover:to-red-600 hover:shadow-red-500/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg animate-pulse"
+                >
+                  {loading ? 'Creating Account...' : '❤️ Create Account'}
+                </button>
 
-              <div className="mt-4 sm:mt-6">
+              <div className="mt-3">
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-300" />
                   </div>
                   <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-gradient-to-br from-red-50 to-pink-50 text-gray-500">
+                    <span className="px-2 bg-white text-gray-500">
                       Join our community
                     </span>
                   </div>
                 </div>
 
-                <div className="mt-4 sm:mt-6 text-center">
-                  <p className="text-sm text-gray-600">
-                    Start your journey to find meaningful connections in the
-                    Zimbabwean community
+                <div className="mt-3 text-center">
+                  <p className="text-sm text-gray-600 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-3 border border-purple-200">
+                    ✨ Start your journey to find meaningful connections in the Zimbabwean community
                   </p>
                 </div>
               </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

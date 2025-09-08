@@ -44,7 +44,7 @@ const DiscoverSidebar: React.FC<DiscoverSidebarProps> = ({
 
 
   return (
-    <div className="bg-gradient-to-br from-white via-purple-50 to-white rounded-2xl border border-gray-200/50 shadow-2xl hover:shadow-purple-500/20 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+    <div className="bg-gradient-to-br from-white via-purple-50 to-white rounded-2xl border border-gray-200/50 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
       {/* Sparkle Effects */}
       <div className="absolute top-5 left-5 w-1 h-1 bg-purple-300 rounded-full animate-pulse"></div>
       
@@ -97,52 +97,52 @@ const DiscoverSidebar: React.FC<DiscoverSidebarProps> = ({
 
         <div className="space-y-1.5">
           {/* Compact Matches */}
-          <div className="flex items-center justify-between p-2 bg-gradient-to-r from-red-100 to-pink-100 rounded-lg border border-red-200/50 shadow-sm hover:shadow-red-200/50 transition-all duration-300">
+          <div className="flex items-center justify-between p-2 bg-white rounded-lg border border-gray-200 transition-all duration-300">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mr-2 shadow-lg">
+              <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mr-2">
                 <Heart className="h-3 w-3 text-white fill-current" />
               </div>
-              <span className="text-red-700 text-xs font-semibold">Matches</span>
+              <span className="text-gray-700 text-xs font-semibold">Matches</span>
             </div>
-            <div className="text-lg font-bold text-red-600">{matchCount}</div>
+            <div className="text-lg font-bold text-gray-800">{matchCount}</div>
           </div>
 
           {/* Compact Likes Received */}
-          <div className="flex items-center justify-between p-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg border border-blue-200/50 shadow-sm hover:shadow-blue-200/50 transition-all duration-300">
+          <div className="flex items-center justify-between p-2 bg-white rounded-lg border border-gray-200 transition-all duration-300">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-2 shadow-lg">
+              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-2">
                 <Eye className="h-3 w-3 text-white" />
               </div>
-              <span className="text-blue-700 text-xs font-semibold">Likes</span>
+              <span className="text-gray-700 text-xs font-semibold">Likes</span>
             </div>
-            <div className="text-lg font-bold text-blue-600">{likesReceived}</div>
+            <div className="text-lg font-bold text-gray-800">{likesReceived}</div>
           </div>
 
           {/* Compact Success Rate */}
-          <div className="flex items-center justify-between p-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-lg border border-green-200/50 shadow-sm hover:shadow-green-200/50 transition-all duration-300">
+          <div className="flex items-center justify-between p-2 bg-white rounded-lg border border-gray-200 transition-all duration-300">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-2 shadow-lg">
+              <div className="w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-2">
                 <TrendingUp className="h-3 w-3 text-white" />
               </div>
-              <span className="text-green-700 text-xs font-semibold">Success</span>
+              <span className="text-gray-700 text-xs font-semibold">Success</span>
             </div>
-            <div className="text-lg font-bold text-green-600">{matchSuccessRate}%</div>
+            <div className="text-lg font-bold text-gray-800">{matchSuccessRate}%</div>
           </div>
 
           {/* Compact Profile Completion */}
-          <div className="p-2 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-lg border border-purple-200/50 shadow-sm hover:shadow-purple-200/50 transition-all duration-300">
+          <div className="p-2 bg-white rounded-lg border border-gray-200 transition-all duration-300">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center">
-                <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mr-2 shadow-lg">
+                <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mr-2">
                   <Sparkles className="h-3 w-3 text-white" />
                 </div>
-                <span className="text-purple-700 text-xs font-semibold">Profile</span>
+                <span className="text-gray-700 text-xs font-semibold">Profile</span>
               </div>
-              <div className="text-lg font-bold text-purple-600">{profileCompletion}%</div>
+              <div className="text-lg font-bold text-gray-800">{profileCompletion}%</div>
             </div>
-            <div className="w-full bg-purple-200/50 rounded-full h-2 overflow-hidden shadow-inner">
+            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
               <div
-                className="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full transition-all duration-500 shadow-sm"
+                className="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${profileCompletion}%` }}
               ></div>
             </div>

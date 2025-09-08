@@ -235,7 +235,7 @@ const Matches = () => {
   return (
     <div className="h-screen bg-gradient-to-br from-gray-50 via-red-50/20 to-pink-50/20 overflow-hidden">
       {/* Mobile: Show either list or chat, Desktop: Show both */}
-      <main className="h-[calc(100vh-112px)] bg-white/95 backdrop-blur-lg overflow-hidden shadow-xl border-t border-gray-200/50">
+      <main className="h-[calc(100vh-140px)] bg-white/95 backdrop-blur-lg overflow-hidden shadow-xl border-t border-gray-200/50">
         {/* Mobile Layout */}
         <div className="lg:hidden h-full overflow-hidden">
           {!selectedChatMatch ? (
@@ -244,11 +244,10 @@ const Matches = () => {
               <div className="p-4 border-b border-gray-200/50 bg-gradient-to-r from-white via-red-50/30 to-pink-50/30 backdrop-blur-lg">
                 <div className="flex items-center space-x-2">
                   <h2 className="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Messages</h2>
-                  <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto overflow-x-hidden">
+              <div className="flex-1 overflow-hidden">
                 {matchesLoading ? (
                   <div className="flex justify-center items-center py-8">
                     <Loader2 className="h-8 w-8 animate-spin text-red-600" />
@@ -370,7 +369,7 @@ const Matches = () => {
               {/* Mobile Messages Area */}
               <div
                 ref={messagesContainerRef}
-                className="messages-container flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4 bg-gray-50"
+                className="messages-container flex-1 overflow-hidden p-4 space-y-4 bg-gray-50"
               >
                 {messagesLoading ? (
                   <div className="flex justify-center items-center py-8">
@@ -482,7 +481,7 @@ const Matches = () => {
               <h2 className="text-xl font-bold text-gray-900">Messages</h2>
             </div>
 
-            <div className="flex-1 overflow-y-auto overflow-x-hidden">
+            <div className="flex-1 overflow-hidden">
               {transformedMatches.map((match) => (
                 <div
                   key={match.id}
@@ -582,7 +581,7 @@ const Matches = () => {
                 {/* Desktop Messages Area */}
                 <div
                   ref={messagesContainerRef}
-                  className="messages-container flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4 bg-gray-50"
+                  className="messages-container flex-1 overflow-hidden p-4 space-y-4 bg-gray-50"
                 >
                   {messagesLoading ? (
                     <div className="flex justify-center items-center py-8">

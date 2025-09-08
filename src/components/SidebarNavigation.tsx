@@ -40,7 +40,7 @@ const SidebarNavigation = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl border border-gray-200/50 shadow-2xl hover:shadow-red-500/20 mx-4 mt-4 sticky top-4 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+    <div className="bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl border border-gray-200/50 mx-4 mt-4 sticky top-4 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
       {/* Sparkle Effects */}
       <div className="absolute top-5 right-5 w-1 h-1 bg-red-300 rounded-full animate-pulse"></div>
       

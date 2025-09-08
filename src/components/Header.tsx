@@ -191,17 +191,23 @@ const Header = () => {
 
                 {/* Dropdown Menu */}
                 {showUserDropdown && (
-                  <div className="absolute right-0 mt-2 w-64 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/50 py-2 z-50 animate-in slide-in-from-top-2 duration-300">
+                  <div className="absolute right-0 mt-2 w-64 bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl border border-gray-200/50 py-2 z-50 animate-in slide-in-from-top-2 duration-300 transform transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
+                    {/* Sparkle Effects */}
+                    <div className="absolute top-5 right-5 w-1 h-1 bg-red-300 rounded-full animate-pulse"></div>
+                    
                     {/* User Info Header */}
-                    <div className="px-4 py-3 border-b border-gray-100">
+                    <div className="px-4 py-3 border-b border-gray-100/80 bg-gradient-to-r from-purple-50 to-pink-50">
                       <div className="flex items-center space-x-3">
-                        <img
-                          src={userAvatar}
-                          alt={userName}
-                          className="w-10 h-10 rounded-full object-cover"
-                        />
+                        <div className="relative">
+                          <img
+                            src={userAvatar}
+                            alt={userName}
+                            className="w-10 h-10 rounded-full object-cover shadow-lg"
+                          />
+                          <div className="absolute -inset-1 bg-gradient-to-r from-red-400 to-pink-400 rounded-full opacity-20 animate-pulse"></div>
+                        </div>
                         <div>
-                          <div className="font-medium text-gray-900">
+                          <div className="font-bold text-gray-900">
                             {userFullName}
                           </div>
                           <div className="text-sm text-gray-500">
@@ -212,44 +218,57 @@ const Header = () => {
                     </div>
 
                     {/* Menu Items */}
-                    <div className="py-2">
-                      <Link
-                        to="/app/settings"
-                        onClick={() => setShowUserDropdown(false)}
-                        className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
-                      >
-                        <Settings className="h-4 w-4 mr-3 text-gray-400" />
-                        Settings
-                      </Link>
+                    <div className="p-2">
+                      <div className="space-y-1">
+                        <Link
+                          to="/app/settings"
+                          onClick={() => setShowUserDropdown(false)}
+                          className="group flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-900"
+                        >
+                          <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                            <Settings className="h-3 w-3 text-white" />
+                          </div>
+                          <span className="text-sm font-semibold">Settings</span>
+                        </Link>
 
-                      <Link
-                        to="/app/profile"
-                        onClick={() => {
-                          setShowUserDropdown(false);
-                        }}
-                        className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
-                      >
-                        <User className="h-4 w-4 mr-3 text-gray-400" />
-                        My Profile
-                      </Link>
+                        <Link
+                          to="/app/profile"
+                          onClick={() => {
+                            setShowUserDropdown(false);
+                          }}
+                          className="group flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-900"
+                        >
+                          <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
+                            <User className="h-3 w-3 text-white" />
+                          </div>
+                          <span className="text-sm font-semibold">My Profile</span>
+                        </Link>
 
-                      <div className="border-t border-gray-100 my-2"></div>
+                        <div className="border-t border-gray-100/80 my-2"></div>
 
-                      <button
-                        onClick={() => {
-                          setShowUserDropdown(false);
-                          handleSignOut();
-                        }}
-                        disabled={isSigningOut}
-                        className="w-full flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
-                      >
-                        {isSigningOut ? (
-                          <div className="w-4 h-4 mr-3 border-2 border-red-300 border-t-red-600 rounded-full animate-spin"></div>
-                        ) : (
-                          <LogOut className="h-4 w-4 mr-3" />
-                        )}
-                        {isSigningOut ? 'Signing out...' : 'Sign Out'}
-                      </button>
+                        <button
+                          onClick={() => {
+                            setShowUserDropdown(false);
+                            handleSignOut();
+                          }}
+                          disabled={isSigningOut}
+                          className="group w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 relative overflow-hidden"
+                        >
+                          {isSigningOut && (
+                            <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 opacity-20 animate-pulse"></div>
+                          )}
+                          <div className="w-5 h-5 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                            {isSigningOut ? (
+                              <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            ) : (
+                              <LogOut className="h-3 w-3 text-white" />
+                            )}
+                          </div>
+                          <span className="text-sm font-semibold">
+                            {isSigningOut ? 'Signing out...' : 'Sign Out'}
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 )}

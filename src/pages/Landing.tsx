@@ -6,7 +6,7 @@ export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100/50">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ export default function Landing() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-8 sm:py-12 lg:py-20 bg-gradient-to-br from-red-50 to-pink-50">
+      <section className="relative py-8 sm:py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 items-center">
             <div className="mb-8 lg:mb-0 text-center lg:text-left">
@@ -49,13 +49,13 @@ export default function Landing() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
                 <button
                   onClick={() => navigate('/signup')}
-                  className="bg-gradient-to-r from-red-600 to-pink-500 hover:shadow-lg text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all w-full sm:w-auto"
+                  className="bg-gradient-to-r from-red-500 via-pink-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold hover:from-red-600 hover:via-pink-600 hover:to-red-600 transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-red-500/50 transform hover:scale-105 active:scale-95 animate-pulse"
                 >
-                  Start Your Journey
+                  ❤️ Start Your Journey
                 </button>
                 <button
                   onClick={() => navigate('/signin')}
-                  className="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all w-full sm:w-auto"
+                  className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold hover:from-gray-200 hover:to-gray-300 transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                 >
                   Learn More
                 </button>
@@ -78,11 +78,20 @@ export default function Landing() {
               </div>
             </div>
             <div className="relative w-full max-w-md lg:max-w-none mx-auto">
-              <img
-                src="/couple1.jpg"
-                alt="Happy couple"
-                className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 lg:h-96 object-cover"
-              />
+              <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+                <div className="absolute top-6 right-6 w-2 h-2 bg-yellow-300 rounded-full animate-pulse z-10"></div>
+                <img
+                  src="/couple1.jpg"
+                  alt="Happy couple"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6">
+                  <div className="text-white">
+                    <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">Find Your Perfect Match</h3>
+                    <p className="text-sm text-white/95">Join thousands of Zimbabweans finding love</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -100,29 +109,29 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center px-4 sm:px-0">
-              <div className="bg-gradient-to-br from-red-100 to-pink-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Users className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
+            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+              <div className="bg-gradient-to-br from-red-500 to-pink-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Cultural Connection</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Cultural Connection</h3>
               <p className="text-sm sm:text-base text-gray-600">
                 Connect with fellow Zimbabweans who share your culture, values, and experiences.
               </p>
             </div>
-            <div className="text-center px-4 sm:px-0">
-              <div className="bg-gradient-to-br from-red-100 to-pink-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
+            <div className="text-center px-4 sm:px-0 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+              <div className="bg-gradient-to-br from-blue-500 to-cyan-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Safe & Secure</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Safe & Secure</h3>
               <p className="text-sm sm:text-base text-gray-600">
                 Your privacy and safety are our top priorities with verified profiles and secure messaging.
               </p>
             </div>
-            <div className="text-center px-4 sm:px-0 sm:col-span-2 lg:col-span-1">
-              <div className="bg-gradient-to-br from-red-100 to-pink-100 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-red-600" />
+            <div className="text-center px-4 sm:px-0 sm:col-span-2 lg:col-span-1 bg-white rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
+              <div className="bg-gradient-to-br from-purple-500 to-indigo-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Meaningful Relationships</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Meaningful Relationships</h3>
               <p className="text-sm sm:text-base text-gray-600">
                 Find love with someone who understands your heritage and shares your dreams.
               </p>
@@ -143,7 +152,7 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl hover:shadow-red-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
               <div className="flex items-center mb-3 sm:mb-4">
                 <img
                   src="/couple2.jpg"
@@ -163,7 +172,7 @@ export default function Landing() {
                 "We met on ZimConnect and instantly connected over our shared Zimbabwean heritage. Two years later, we're happily married!"
               </p>
             </div>
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200">
               <div className="flex items-center mb-3 sm:mb-4">
                 <img
                   src="/couple3.jpg"
@@ -183,7 +192,7 @@ export default function Landing() {
                 "Finally, a dating app that understands our culture! Found my soulmate within 3 months!"
               </p>
             </div>
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg sm:col-span-2 lg:col-span-1">
+            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-gray-200 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-3 sm:mb-4">
                 <img
                   src="/couple1.jpg"
@@ -218,9 +227,9 @@ export default function Landing() {
           </p>
           <button
             onClick={() => navigate('/signup')}
-            className="bg-white text-red-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all w-full sm:w-auto max-w-xs"
+            className="bg-white text-red-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 w-full sm:w-auto max-w-xs shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
           >
-            Get Started Today
+            ❤️ Get Started Today
           </button>
         </div>
       </section>

@@ -66,13 +66,9 @@ const Likes = () => {
       <main>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <div className="relative inline-block">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                People You've Liked
-              </h1>
-              <div className="absolute -top-2 -right-2 w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
-            </div>
-            <p className="text-gray-600 bg-white/50 backdrop-blur-sm rounded-full px-4 py-2 inline-block">Discover your connections ❤️</p>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              People You've Liked
+            </h1>
           </div>
 
           {/* Loading State */}

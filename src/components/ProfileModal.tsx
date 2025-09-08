@@ -220,7 +220,6 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
           {profile.bio && (
             <div className="bg-gray-50 rounded-xl p-4">
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
                 About
               </h3>
               <p className="text-gray-700 leading-relaxed text-base">
@@ -232,7 +231,6 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
           {profile.interests && profile.interests.length > 0 && (
             <div className="bg-gray-50 rounded-xl p-4">
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
                 Interests
               </h3>
               <div className="flex flex-wrap gap-2">
